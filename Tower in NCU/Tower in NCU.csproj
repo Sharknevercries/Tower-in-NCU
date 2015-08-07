@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C852428-50D0-4B59-A01D-2E4E9DC877CE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tower_in_NCU</RootNamespace>
+    <AssemblyName>Tower in NCU</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Applet\Player.cs" />
+    <Compile Include="GameState\GameState.cs" />
+    <Compile Include="GameState\MenuState.cs" />
+    <Compile Include="GameState\TowerState.cs" />
+    <Compile Include="Image\ImageUnit.cs" />
+    <Compile Include="MapObject\Item.cs" />
+    <Compile Include="MapObject\MapObject.cs" />
+    <Compile Include="Main\GameWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\GameWindow.Designer.cs">
+      <DependentUpon>GameWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameState\GameStateManager.cs" />
+    <Compile Include="Main\Program.cs" />
+    <Compile Include="MapObject\MapObjectFactory.cs" />
+    <Compile Include="MapObject\Monster.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tower\Floor.cs" />
+    <Compile Include="Tower\Tower.cs" />
+    <EmbeddedResource Include="Main\GameWindow.resx">
+      <DependentUpon>GameWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Character\KeymanFace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Character\TonyFace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Character\Actor1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\upArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\author.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\choiceBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\choiceBackground2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\dialogueBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\downArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\gameintro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\gameOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\leftArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\monstersintro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\rightArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\slidebar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\slidebarBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\story.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\thanks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obj\Title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\gameover.mid" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\getItem.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\move.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\playerAttack.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\bgm.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\cancel.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\changeChoice.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\confirm.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\door.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\eliminate.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\enemyAttack.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\fail.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floors\floor1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floors\floor2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floors\floor3.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floors\floor4.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floors\floor5.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
