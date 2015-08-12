@@ -12,18 +12,18 @@ namespace Tower_in_NCU.Main
 {
     public partial class GameWindow : Form
     {
-        public static readonly int GameWidth = 576;
-        public static readonly int GameHeight = 416;
+        public const int GameWidth = 576;
+        public const int GameHeight = 416;
 
         private GameState.GameStateManager _gsm;
-        private System.Drawing.Graphics _g;
+        private Graphics _g;
 
         public GameWindow()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void GameWindow_Load(object sender, EventArgs e)
         {
             _gsm = new GameState.GameStateManager();
             gamePanel.Paint += GamePanel_Paint;
@@ -37,12 +37,18 @@ namespace Tower_in_NCU.Main
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            _gsm.Excute();
             gamePanel.Refresh();
         }
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        private void GameWindow_KeyDown(object sender, KeyEventArgs e)
         {
             _gsm.KeyDown(e);
+        }
+
+        private void GameWindow_KeyUp(object sender, KeyEventArgs e)
+        {
+            _gsm.KeyPress(e);
         }
     }
 }

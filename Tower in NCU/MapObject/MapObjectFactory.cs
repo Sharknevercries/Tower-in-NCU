@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tower_in_NCU.Tower;
+using Tower_in_NCU.MapObject;
 
 namespace Tower_in_NCU.MapObject
 {
@@ -21,8 +22,8 @@ namespace Tower_in_NCU.MapObject
             try
             {
                 Image.ImageUnit img = new Image.ImageUnit(FloorImageName);
-                _objectInCol = img.Width / Tower.Floor.ObjectSize;
-                _objectInRow = img.Height / Tower.Floor.ObjectSize;
+                _objectInCol = img.Width / Floor.ObjectSize;
+                _objectInRow = img.Height / Floor.ObjectSize;
                 for(int row = 0; row < _objectInRow; row++)
                 {
                     if(row <= 5)
@@ -30,13 +31,18 @@ namespace Tower_in_NCU.MapObject
                         for(int col = 0; col < _objectInCol; col++)
                         {
                             Rectangle rect = new Rectangle(col * Floor.ObjectSize, row * Floor.ObjectSize, Floor.ObjectSize, Floor.ObjectSize);
-                            int type = row * _objectInCol + col;
-                            _dataSet.Add(new Item(img.GetSubImage(rect), type));
+                            _dataSet.Add(new Item(img.GetSubImage(rect), (MapObjectType)_dataSet.Count));
                         }
                     }
-                    else
+                    else if(row >= 14)
                     {
-
+                        List<Image.ImageUnit> frames = new List<Image.ImageUnit>();
+                        for(int col = 0; col < _objectInCol - 1; col++)
+                        {
+                            Rectangle rect = new Rectangle(col * Floor.ObjectSize, row * Floor.ObjectSize, Floor.ObjectSize, Floor.ObjectSize);
+                            frames.Add(img.GetSubImage(rect));
+                        }
+                        _dataSet.Add(new Monster(frames, (MapObjectType)_dataSet.Count));
                     }
                 }
             }
@@ -46,15 +52,7 @@ namespace Tower_in_NCU.MapObject
             }
         }
 
-        public static MapObject CreateMapObject(int type)
-        {
-            // UNDONE: Sort the MapObject by type
-            switch (type)
-            {
-                case 0: return _dataSet[type];
-            }
-            return _dataSet[0];
-        }
+        public static MapObject CreateMapObject(MapObjectType type) => _dataSet[(int)type].GetCopy();
 
     }
 }

@@ -51,7 +51,7 @@ namespace Tower_in_NCU.GameState
 
         public override void Draw(Graphics g)
         {
-            _background.Draw(g);
+            _background.Draw(g, Main.GameWindow.GameWidth, Main.GameWindow.GameHeight);
             for (int i = 0; i < _options.Length; i++)
             {
                 if (i == _currentChoice)
@@ -67,7 +67,7 @@ namespace Tower_in_NCU.GameState
 
         public override void Initialize()
         {
-            throw new NotImplementedException();
+            _currentChoice = 0;
         }
 
         public override void KeyDown(KeyEventArgs e)
@@ -89,6 +89,15 @@ namespace Tower_in_NCU.GameState
                     break;
             }
         }
-        
+
+        public override void KeyUp(KeyEventArgs e)
+        {
+            
+        }
+
+        public override void Excute()
+        {
+
+        }
     }
 }

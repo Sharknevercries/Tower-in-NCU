@@ -18,7 +18,7 @@ namespace Tower_in_NCU.Image
             try
             {
                 object obj = Properties.Resources.ResourceManager.GetObject(s);
-                _img = (System.Drawing.Bitmap)obj;
+                _img = (Bitmap)obj;
             }
             catch(Exception e)
             {
@@ -43,11 +43,14 @@ namespace Tower_in_NCU.Image
 
         public void SetPosition(int x, int y) => _position = new Point(x, y);
 
+        public void SetPosition(Point position) => _position = position;
+
         public void Draw(Graphics g) => g.DrawImage(_img, _position);
 
         public void Draw(Graphics g, int width, int height) => g.DrawImage(_img, new Rectangle(_position.X, _position.Y, width, height));
 
         public ImageUnit GetSubImage(Rectangle rect) => new ImageUnit(_img.Clone(rect, _img.PixelFormat));
+
         
     }
 }

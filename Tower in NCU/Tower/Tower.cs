@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tower_in_NCU.Applet;
+using System.Drawing;
 
 namespace Tower_in_NCU.Tower
 {
@@ -21,7 +23,9 @@ namespace Tower_in_NCU.Tower
 
         public static Tower GetInstance() => _tower;
 
-        public Floor GetFloor(int currentFloor) => _floors[currentFloor];
+        public bool Event(Player player) => _floors[player.CurrentFloor].Event(player);
+
+        public void Draw(Graphics g, int currentFloor) => _floors[currentFloor].Draw(g);
 
         public void Initialize()
         {

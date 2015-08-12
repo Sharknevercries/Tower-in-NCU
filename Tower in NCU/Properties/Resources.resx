@@ -160,9 +160,6 @@
   <data name="fail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sound\fail.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="floor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Floors\floor1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;big5</value>
-  </data>
   <data name="floor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Floors\floor2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;big5</value>
   </data>
@@ -228,5 +225,8 @@
   </data>
   <data name="upArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obj\upArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="floor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Floors\floor1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;big5</value>
   </data>
 </root>

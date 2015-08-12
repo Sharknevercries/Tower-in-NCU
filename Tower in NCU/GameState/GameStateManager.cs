@@ -41,6 +41,10 @@ namespace Tower_in_NCU.GameState
 
         public void KeyDown(KeyEventArgs e) => _gameStates[_currentState].KeyDown(e);
 
+        public void KeyPress(KeyEventArgs e) => _gameStates[_currentState].KeyUp(e);
+
+        public void Excute() => _gameStates[_currentState].Excute();
+
         public void SetState(int state)
         {
             _gameStates[state].Initialize();

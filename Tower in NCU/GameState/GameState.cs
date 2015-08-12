@@ -19,6 +19,8 @@ namespace Tower_in_NCU.GameState
 
         public abstract void Draw(Graphics g);
         public abstract void Initialize();
+        public abstract void Excute();
         public abstract void KeyDown(KeyEventArgs e);
+        public abstract void KeyUp(KeyEventArgs e);
     }
 }

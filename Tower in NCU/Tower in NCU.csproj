@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Applet\Applet.cs" />
+    <Compile Include="Applet\Battle.cs" />
+    <Compile Include="Applet\Dialogue.cs" />
     <Compile Include="Applet\Player.cs" />
     <Compile Include="GameState\GameState.cs" />
     <Compile Include="GameState\MenuState.cs" />
