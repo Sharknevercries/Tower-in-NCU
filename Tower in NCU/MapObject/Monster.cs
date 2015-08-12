@@ -27,7 +27,7 @@ namespace Tower_in_NCU.MapObject
                     SetStatus(30, 20, 10, 1, 1);
                     break;
                 case MapObjectType.BlueSlime:
-                    SetStatus(30, 5, 5, 1, 1);
+                    SetStatus(30, 15, 5, 1, 1);
                     break;
             }
         }
@@ -69,5 +69,17 @@ namespace Tower_in_NCU.MapObject
             set { _def = value; }
         }
         
+        public int Gold
+        {
+            get { return _gold; }
+            set { _gold = value; }
+        }
+
+        public int Exp
+        {
+            get { return _exp; }
+            set { _exp = value; }
+        }
+
     }
 }

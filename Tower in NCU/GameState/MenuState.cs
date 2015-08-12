@@ -56,11 +56,11 @@ namespace Tower_in_NCU.GameState
             {
                 if (i == _currentChoice)
                 {
-                    g.DrawString(_options[i], menuFont, new SolidBrush(Color.Red), new PointF(450, 310 + i * 30));
+                    g.DrawString(_options[i], menuFont, Brushes.Red, new PointF(450, 310 + i * 30));
                 }
                 else
                 {
-                    g.DrawString(_options[i], menuFont, new SolidBrush(Color.Black), new PointF(450, 310 + i * 30));
+                    g.DrawString(_options[i], menuFont, Brushes.Black, new PointF(450, 310 + i * 30));
                 }
             }
         }

@@ -66,7 +66,7 @@ namespace Tower_in_NCU.MapObject
 
         public void Draw(Graphics g)
         {
-            _frames[_currentFrame++ / 3].Draw(g, Floor.ObjectSize, Floor.ObjectSize);
+            _frames[_currentFrame++ / 3].Draw(g);
             _currentFrame = _currentFrame >= 3 * _frames.Count ? 0 : _currentFrame;
         }
         

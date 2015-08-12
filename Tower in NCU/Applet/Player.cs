@@ -16,7 +16,7 @@ namespace Tower_in_NCU.Applet
 
         private Tower.Tower _tower;
 
-        private static List<Image.ImageUnit[]> _frames;
+        private List<Image.ImageUnit[]> _frames;
         private const string _characterImageName = "Actor1";
         private int _currentFrame;
         private int _battleFrame;
@@ -50,15 +50,19 @@ namespace Tower_in_NCU.Applet
         static Player()
         {
             _player = new Player();
+        }
+
+        private Player()
+        {
             _frames = new List<Image.ImageUnit[]>();
             _keys = new Image.ImageUnit[3];
             try
             {
                 Image.ImageUnit character = new Image.ImageUnit(_characterImageName);
-                for(int row= 0; row < RowFrame; row++)
+                for (int row = 0; row < RowFrame; row++)
                 {
                     Image.ImageUnit[] tmp = new Image.ImageUnit[ColFrame];
-                    for(int col = 0; col < ColFrame; col++)
+                    for (int col = 0; col < ColFrame; col++)
                     {
                         Rectangle rect = new Rectangle(col * Floor.ObjectSize, row * Floor.ObjectSize, Floor.ObjectSize, Floor.ObjectSize);
                         tmp[col] = character.GetSubImage(rect);
@@ -69,13 +73,11 @@ namespace Tower_in_NCU.Applet
                 _keys[1] = MapObjectFactory.CreateMapObject(MapObjectType.BlueKey).Frames[0];
                 _keys[2] = MapObjectFactory.CreateMapObject(MapObjectType.RedKey).Frames[0];
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
             }
         }
-
-        private Player() { }
 
         public static Player GetInstance() => _player;
 

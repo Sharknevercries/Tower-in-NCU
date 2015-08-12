@@ -45,7 +45,7 @@ namespace Tower_in_NCU.Image
 
         public void SetPosition(Point position) => _position = position;
 
-        public void Draw(Graphics g) => g.DrawImage(_img, _position);
+        public void Draw(Graphics g) => g.DrawImage(_img, new Rectangle(_position, _img.Size));
 
         public void Draw(Graphics g, int width, int height) => g.DrawImage(_img, new Rectangle(_position.X, _position.Y, width, height));
 

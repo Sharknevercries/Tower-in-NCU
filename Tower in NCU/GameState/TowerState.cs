@@ -34,9 +34,8 @@ namespace Tower_in_NCU.GameState
             _applets = new List<Applet.Applet>();
             _applets.Add(Player.GetInstance());
             _applets.Add(Battle.GetInstance());
-            //_applets.Add(Dialogue.GetInstance());
+            _applets.Add(Dialogue.GetInstance());
             _tower = Tower.Tower.GetInstance();
-            //_dialogue = Dialogue.GetInstance();
             _tower.Initialize();
             (_applets[(int)AppletName.Player] as Player).Initialize();
         }
