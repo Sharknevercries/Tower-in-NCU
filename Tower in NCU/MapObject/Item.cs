@@ -36,6 +36,7 @@ namespace Tower_in_NCU.MapObject
                 case MapObjectType.YellowKey:
                     player.YellowKey++;
                     floor.SetMapObject(player.NextPosition, MapObjectType.Floor1);
+                    _dialogue.AddDialogue(Dialogue.DialogueLocation.Middle, "系統資訊", "獲得一把黃鑰匙", Dialogue.FaceLoaction.None, null);
                     break;
                 case MapObjectType.BlueKey:
                     player.BlueKey++;

@@ -24,10 +24,28 @@ namespace Tower_in_NCU.MapObject
             switch (type)
             {
                 case MapObjectType.GreenSlime:
-                    SetStatus(30, 20, 10, 1, 1);
+                    SetStatus(30, 20, 5, 1, 1);
                     break;
                 case MapObjectType.BlueSlime:
-                    SetStatus(30, 15, 5, 1, 1);
+                    SetStatus(50, 25, 5, 2, 1);
+                    break;
+                case MapObjectType.RedSlime:
+                    SetStatus(80, 30, 5, 3, 2);
+                    break;
+                case MapObjectType.LittleBat:
+                    SetStatus(40, 35, 20, 5, 2);
+                    break;
+                case MapObjectType.BigBat:
+                    SetStatus(70, 80, 30, 7, 4);
+                    break;
+                case MapObjectType.BlueWizard:
+                    SetStatus(70, 15, 10, 4, 2);
+                    break;
+                case MapObjectType.Wizard:
+                    SetStatus(150, 25, 25, 10, 3);
+                    break;
+                case MapObjectType.Skeleton:
+                    SetStatus(200,100, 5, 7, 3);
                     break;
             }
         }

@@ -27,9 +27,6 @@ namespace Tower_in_NCU.Applet
         private int _counter;
         private const int MaxCounter = 3;
 
-        private Font _font;
-        private Brush _brush;
-
         static Battle()
         {
             _battle = new Battle();
@@ -39,8 +36,6 @@ namespace Tower_in_NCU.Applet
         {
             _background = new Image.ImageUnit(BackgroundImageName);
             _background.SetPosition(Floor.StartX, 150);
-            _font = new Font("Arial", 14);
-            _brush = new SolidBrush(Color.Black);
             _dialogue = Dialogue.GetInstance();
             _active = false;
         }
@@ -61,26 +56,28 @@ namespace Tower_in_NCU.Applet
             if (!_active)
                 return;
 
-            _background.Draw(g, Floor.Edge * Floor.ObjectSize, 130);
-            _monster.SetPosition(new Point(230, 140));
+            Font font = new Font("Arial", 12);
+
+            _background.Draw(g, _background.Width, 130);
+            _monster.SetPosition(new Point(230, 150));
             _monster.Draw(g);
 
-            g.DrawString("生命", _font, _brush, new Point(210, 190));
-            g.DrawString("攻擊力", _font, _brush, new Point(200, 222));
-            g.DrawString("防禦力", _font, _brush, new Point(200, 254));
+            g.DrawString("生命", font, Brushes.White, new Point(210, 190));
+            g.DrawString("攻擊力", font, Brushes.White, new Point(200, 222));
+            g.DrawString("防禦力", font, Brushes.White, new Point(200, 254));
 
-            g.DrawString(_monster.Hp + "", _font, _brush, new Point(280, 190));
-            g.DrawString(_monster.Atk + "", _font, _brush, new Point(280, 222));
-            g.DrawString(_monster.Def + "", _font, _brush, new Point(280, 254));
+            g.DrawString(_monster.Hp + "", font, Brushes.White, new Point(280, 190));
+            g.DrawString(_monster.Atk + "", font, Brushes.White, new Point(280, 222));
+            g.DrawString(_monster.Def + "", font, Brushes.White, new Point(280, 254));
 
             _player.DrawPlayer(g, new Point(460, 140), Player.Face.Down);
-            g.DrawString("生命", _font, _brush, new Point(430, 190));
-            g.DrawString("攻擊力", _font, _brush, new Point(420, 222));
-            g.DrawString("防禦力", _font, _brush, new Point(420, 254));
+            g.DrawString("生命", font, Brushes.White, new Point(430, 190));
+            g.DrawString("攻擊力", font, Brushes.White, new Point(420, 222));
+            g.DrawString("防禦力", font, Brushes.White, new Point(420, 254));
 
-            g.DrawString(_player.Hp + "", _font, _brush, new Point(500, 190));
-            g.DrawString(_player.Atk + "", _font, _brush, new Point(500, 222));
-            g.DrawString(_player.Def + "", _font, _brush, new Point(500, 254));
+            g.DrawString(_player.Hp + "", font, Brushes.White, new Point(500, 190));
+            g.DrawString(_player.Atk + "", font, Brushes.White, new Point(500, 222));
+            g.DrawString(_player.Def + "", font, Brushes.White, new Point(500, 254));
 
         }
 
@@ -136,10 +133,10 @@ namespace Tower_in_NCU.Applet
             _floor.SetMapObject(_player.NextPosition, MapObjectType.Floor1);
             _player.Gold += _monster.Gold;
             _player.Exp += _monster.Exp;
-            _player.Active = true;
             string result = string.Format("獲得 {0} 金幣和 {1} 經驗", _monster.Gold, _monster.Exp);
-            _dialogue.AddDialogue(Dialogue.DialogueLocation.Middle, "戰鬥結果", result, Dialogue.FaceLoaction.None);
+            _dialogue.AddDialogue(Dialogue.DialogueLocation.Middle, "戰鬥結果", result, Dialogue.FaceLoaction.None, null);
             _active = false;
+            _player.Active = true;
         }
 
     }

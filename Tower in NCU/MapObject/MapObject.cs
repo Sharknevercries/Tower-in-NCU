@@ -18,15 +18,18 @@ namespace Tower_in_NCU.MapObject
         YellowDoor, BlueDoor, RedDoor, TeleportStaf, Empty1,
         Sword1, Sword2, Sword3, Sword4, Sword5,
         Shield1, Shield2, Shield3, Shield4, Shield5,
-
-
-        
-
-
+        a, b,c,d,e, 
+        f,g,h,i,j,
+        Shop, ShopBody1, ShopBody2,
+        NPC1, NCP2,
+        //
+        //
+        //
+        //
+        //
         GreenSlime, BlueSlime, RedSlime, LittleBat, BigBat,
         RedBigBat, Wizard, BlueWizard, RedWizard, Skeleton,
-
-
+        ShieldSkeleton, EliteSkeleton,
     };
 
     abstract class MapObject
@@ -34,12 +37,14 @@ namespace Tower_in_NCU.MapObject
         private List<Image.ImageUnit> _frames;
         private int _currentFrame;
         protected MapObjectType _type;
+        protected Dialogue _dialogue;
         
         public MapObject(List<Image.ImageUnit> frames, MapObjectType type)
         {
             _frames = frames;
             _currentFrame = 0;
             _type = type;
+            _dialogue = Dialogue.GetInstance();
         }
 
         public MapObject(Image.ImageUnit img, MapObjectType type) : this(new List<Image.ImageUnit>() { img }, type) { }

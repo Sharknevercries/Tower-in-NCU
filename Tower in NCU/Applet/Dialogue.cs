@@ -18,7 +18,6 @@ namespace Tower_in_NCU.Applet
         private Image.ImageUnit _background;
         private const string BackgroundImageName = "dialogueBackground";
 
-
         public enum DialogueLocation
         {
             Up = 0, Middle = 160, Down = 320,
@@ -56,7 +55,12 @@ namespace Tower_in_NCU.Applet
             _background = new Image.ImageUnit(BackgroundImageName);
         }
 
-        public void AddDialogue(DialogueLocation dialogueLocation, string nameTitle, string message, FaceLoaction faceLocation, string faceName = null)
+        public void Initialize()
+        {
+            _queue.Clear();
+        }
+
+        public void AddDialogue(DialogueLocation dialogueLocation, string nameTitle, string message, FaceLoaction faceLocation, string faceName)
         {
             _queue.Enqueue(new Dialogue(dialogueLocation, nameTitle, message, faceLocation, faceName));
         }
@@ -103,14 +107,14 @@ namespace Tower_in_NCU.Applet
         public override void Draw(Graphics g)
         {
             if (_queue.Count > 0)
-            {
+            {  
                 _queue.Peek().Show(g);
             }
         }
 
         public override void Excute()
         {
-            ;
+            
         }
 
         public override void KeyDown(KeyEventArgs e)
@@ -130,5 +134,10 @@ namespace Tower_in_NCU.Applet
         }
 
         public static Dialogue GetInstance() => _dialogue;
+
+        public bool HasMessage()
+        {
+            return _queue.Count > 0;
+        }
     }
 }

@@ -13,8 +13,10 @@ namespace Tower_in_NCU.Applet
 {
     class Player : Applet
     {
+        private static Player _player;
 
         private Tower.Tower _tower;
+        private Dialogue _dialogue;
 
         private List<Image.ImageUnit[]> _frames;
         private const string _characterImageName = "Actor1";
@@ -40,8 +42,6 @@ namespace Tower_in_NCU.Applet
         private bool _right;
         private bool _down;
         private bool _up;
-
-        private static Player _player = new Player();
 
         public enum Face { Down, Left, Right, Up };
         
@@ -98,11 +98,15 @@ namespace Tower_in_NCU.Applet
             _active = true;
             _position = new Point(6, 11);
             _tower = Tower.Tower.GetInstance();
+            _dialogue = Dialogue.GetInstance();
         }
 
         public override void Excute()
         {
             if (!_active)
+                return;
+
+            if (_dialogue.HasMessage())
                 return;
 
             if (_left) _finalFace = Face.Left;
@@ -145,6 +149,12 @@ namespace Tower_in_NCU.Applet
             if (!_active)
                 return;
 
+            if (_dialogue.HasMessage())
+            {
+                StopMove();
+                return;
+            }
+
             if (_left || _right || _up || _down)
                 _currentFrame++;
             else
@@ -157,6 +167,12 @@ namespace Tower_in_NCU.Applet
         {
             if (!_active)
                 return;
+
+            if (_dialogue.HasMessage())
+            {
+                StopMove();
+                return;
+            }
 
             switch (e.KeyCode)
             {
@@ -179,6 +195,12 @@ namespace Tower_in_NCU.Applet
         {
             if (!_active)
                 return;
+
+            if (_dialogue.HasMessage())
+            {
+                StopMove();
+                return;
+            }
 
             switch (e.KeyCode)
             {
@@ -338,7 +360,7 @@ namespace Tower_in_NCU.Applet
         {
             _frames[(int)face][_battleFrame / 3].SetPosition(position);
             _frames[(int)face][_battleFrame++ / 3].Draw(g);
-            if (_battleFrame >= _frames[(int)_finalFace].Length)
+            if (_battleFrame >= _frames[(int)face].Length * 3)
                 _battleFrame = 0;
         }
 
