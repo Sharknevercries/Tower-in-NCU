@@ -15,16 +15,16 @@ namespace Tower_in_NCU.GameState
         private List<GameState> _gameStates;
         private int _currentState;
 
-        public static readonly int MENUSTATE        = 0;
-        public static readonly int TOWERSTATE       = 1;
-        public static readonly int HELPSTATE        = 2;
-        public static readonly int GAMEOVERSTATE    = 3;
-        public static readonly int GAMEENDSTATE     = 4;
+        public static readonly int MenuState        = 0;
+        public static readonly int TowerState       = 1;
+        public static readonly int HelpState        = 2;
+        public static readonly int GameOverState    = 3;
+        public static readonly int GameEndState     = 4;
 
         public GameStateManager()
         {
             _gameStates = new List<GameState>();
-            _currentState = MENUSTATE;
+            _currentState = MenuState;
             _gameStates.Add(new MenuState(this));
             _gameStates.Add(new TowerState(this));
             //gameStates.Add(new HelpState(this));

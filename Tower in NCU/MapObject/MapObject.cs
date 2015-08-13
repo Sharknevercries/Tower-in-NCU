@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using Tower_in_NCU.Tower;
 using Tower_in_NCU.Applet;
+using Tower_in_NCU.Image;
 
 namespace Tower_in_NCU.MapObject
 {
@@ -15,18 +16,17 @@ namespace Tower_in_NCU.MapObject
         Floor1, Block1, UpStair1, UpStair2, DownStair1,
         YellowKey, BlueKey, RedKey, MonsterBook, DownStair2,
         RedPotion, BluePotion, RedCrystal, BlueCrystal, xxxNeedtoFix,
-        YellowDoor, BlueDoor, RedDoor, TeleportStaf, Empty1,
+        YellowDoor, BlueDoor, RedDoor, TeleportStaf, s,
         Sword1, Sword2, Sword3, Sword4, Sword5,
         Shield1, Shield2, Shield3, Shield4, Shield5,
         a, b,c,d,e, 
         f,g,h,i,j,
         Shop, ShopBody1, ShopBody2,
         NPC1, NCP2,
-        //
-        //
-        //
-        //
-        //
+        k,
+        l,
+        m,
+        n,
         GreenSlime, BlueSlime, RedSlime, LittleBat, BigBat,
         RedBigBat, Wizard, BlueWizard, RedWizard, Skeleton,
         ShieldSkeleton, EliteSkeleton,
@@ -34,12 +34,12 @@ namespace Tower_in_NCU.MapObject
 
     abstract class MapObject
     {
-        private List<Image.ImageUnit> _frames;
+        private List<ImageUnit> _frames;
         private int _currentFrame;
         protected MapObjectType _type;
         protected Dialogue _dialogue;
         
-        public MapObject(List<Image.ImageUnit> frames, MapObjectType type)
+        public MapObject(List<ImageUnit> frames, MapObjectType type)
         {
             _frames = frames;
             _currentFrame = 0;
@@ -47,12 +47,12 @@ namespace Tower_in_NCU.MapObject
             _dialogue = Dialogue.GetInstance();
         }
 
-        public MapObject(Image.ImageUnit img, MapObjectType type) : this(new List<Image.ImageUnit>() { img }, type) { }
+        public MapObject(ImageUnit img, MapObjectType type) : this(new List<ImageUnit>() { img }, type) { }
 
         public MapObject GetCopy()
         {
             MapObject obj = (MapObject)MemberwiseClone();
-            obj._frames = new List<Image.ImageUnit>(obj._frames);
+            obj._frames = new List<ImageUnit>(obj._frames);
             return obj;
         }
 
@@ -82,7 +82,7 @@ namespace Tower_in_NCU.MapObject
             get { return _type; }
         }
 
-        public List<Image.ImageUnit> Frames
+        public List<ImageUnit> Frames
         {
             get { return _frames; }
         }

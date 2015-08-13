@@ -6,15 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Tower_in_NCU.Applet;
 using Tower_in_NCU.Tower;
+using Tower_in_NCU.Image;
 
 namespace Tower_in_NCU.MapObject
 {
     class Item : MapObject
     {
-        public Item(Image.ImageUnit img, MapObjectType type) : base(img, type) { }
+        public Item(ImageUnit img, MapObjectType type) : base(img, type) { }
 
-        public Item(List<Image.ImageUnit> frames, MapObjectType type) : base(frames, type) { }
-
+        public Item(List<ImageUnit> frames, MapObjectType type) : base(frames, type) { }
+        
         public override bool Event(Player player, Floor floor)
         {
             bool access = true;
@@ -41,28 +42,34 @@ namespace Tower_in_NCU.MapObject
                 case MapObjectType.BlueKey:
                     player.BlueKey++;
                     floor.SetMapObject(player.NextPosition, MapObjectType.Floor1);
+                    _dialogue.AddDialogue(Dialogue.DialogueLocation.Middle, "系統資訊", "獲得一把藍鑰匙", Dialogue.FaceLoaction.None, null);
                     break;
                 case MapObjectType.RedKey:
                     player.RedKey++;
                     floor.SetMapObject(player.NextPosition, MapObjectType.Floor1);
+                    _dialogue.AddDialogue(Dialogue.DialogueLocation.Middle, "系統資訊", "獲得一把紅鑰匙", Dialogue.FaceLoaction.None, null);
                     break;
                 case MapObjectType.MonsterBook:
                     return true;
                 case MapObjectType.RedPotion:
                     player.Hp += 200;
                     floor.SetMapObject(player.NextPosition, MapObjectType.Floor1);
+                    _dialogue.AddDialogue(Dialogue.DialogueLocation.Middle, "系統資訊", "生命增加 200 點", Dialogue.FaceLoaction.None, null);
                     break;
                 case MapObjectType.BluePotion:
                     player.Hp += 500;
                     floor.SetMapObject(player.NextPosition, MapObjectType.Floor1);
+                    _dialogue.AddDialogue(Dialogue.DialogueLocation.Middle, "系統資訊", "生命增加 500 點", Dialogue.FaceLoaction.None, null);
                     break;
                 case MapObjectType.RedCrystal:
                     player.Atk += 3;
                     floor.SetMapObject(player.NextPosition, MapObjectType.Floor1);
+                    _dialogue.AddDialogue(Dialogue.DialogueLocation.Middle, "系統資訊", "攻擊增加 3 點", Dialogue.FaceLoaction.None, null);
                     break;
                 case MapObjectType.BlueCrystal:
                     player.Def += 3;
                     floor.SetMapObject(player.NextPosition, MapObjectType.Floor1);
+                    _dialogue.AddDialogue(Dialogue.DialogueLocation.Middle, "系統資訊", "防禦增加 3 點", Dialogue.FaceLoaction.None, null);
                     break;
                 case MapObjectType.YellowDoor:
                     if(player.YellowKey > 0)

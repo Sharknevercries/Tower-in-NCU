@@ -36,10 +36,10 @@ namespace Tower_in_NCU.GameState
             switch (_currentChoice)
             {
                 case 0:
-                    gsm.SetState(GameStateManager.TOWERSTATE);
+                    gsm.SetState(GameStateManager.TowerState);
                     break;
                 case 1:
-                    gsm.SetState(GameStateManager.HELPSTATE);
+                    gsm.SetState(GameStateManager.HelpState);
                     break;
                 case 2:
                     Application.Exit();

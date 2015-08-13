@@ -15,7 +15,7 @@ namespace Tower_in_NCU.GameState
 
         private enum AppletName
         {
-            Player, Battle, Dialogue
+            Player, Battle, Dialogue, Shop
         };
 
         private List<Applet.Applet> _applets;
@@ -35,9 +35,13 @@ namespace Tower_in_NCU.GameState
             _applets.Add(Player.GetInstance());
             _applets.Add(Battle.GetInstance());
             _applets.Add(Dialogue.GetInstance());
+            _applets.Add(Applet.Shop.GetInstance());
+
             _tower = Tower.Tower.GetInstance();
             _tower.Initialize();
+
             (_applets[(int)AppletName.Player] as Player).Initialize();
+            (_applets[(int)AppletName.Shop] as Applet.Shop).Initialize();
         }
 
         public override void KeyDown(KeyEventArgs e)
@@ -54,6 +58,13 @@ namespace Tower_in_NCU.GameState
 
         public override void Excute()
         {
+            if((_applets[(int)AppletName.Player] as Player).Hp <= 0)
+            {
+                gsm.SetState(GameStateManager.GameOverState);
+                return;
+            }
+
+
             for (int i = 0; i < _applets.Count; i++)
                 _applets[i].Excute();
         }

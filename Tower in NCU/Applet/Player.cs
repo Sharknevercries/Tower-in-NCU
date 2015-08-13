@@ -8,6 +8,7 @@ using Tower_in_NCU.Tower;
 using Tower_in_NCU.Main;
 using Tower_in_NCU.MapObject;
 using System.Windows.Forms;
+using Tower_in_NCU.Image;
 
 namespace Tower_in_NCU.Applet
 {
@@ -18,7 +19,7 @@ namespace Tower_in_NCU.Applet
         private Tower.Tower _tower;
         private Dialogue _dialogue;
 
-        private List<Image.ImageUnit[]> _frames;
+        private List<ImageUnit[]> _frames;
         private const string _characterImageName = "Actor1";
         private int _currentFrame;
         private int _battleFrame;
@@ -28,7 +29,7 @@ namespace Tower_in_NCU.Applet
         private Point _position;
         private Point _nextPosition;
 
-        private static Image.ImageUnit[] _keys;
+        private static ImageUnit[] _keys;
         private int _hp;
         private int _atk;
         private int _def;
@@ -54,14 +55,14 @@ namespace Tower_in_NCU.Applet
 
         private Player()
         {
-            _frames = new List<Image.ImageUnit[]>();
-            _keys = new Image.ImageUnit[3];
+            _frames = new List<ImageUnit[]>();
+            _keys = new ImageUnit[3];
             try
             {
-                Image.ImageUnit character = new Image.ImageUnit(_characterImageName);
+                ImageUnit character = new ImageUnit(_characterImageName);
                 for (int row = 0; row < RowFrame; row++)
                 {
-                    Image.ImageUnit[] tmp = new Image.ImageUnit[ColFrame];
+                    ImageUnit[] tmp = new ImageUnit[ColFrame];
                     for (int col = 0; col < ColFrame; col++)
                     {
                         Rectangle rect = new Rectangle(col * Floor.ObjectSize, row * Floor.ObjectSize, Floor.ObjectSize, Floor.ObjectSize);
@@ -87,7 +88,7 @@ namespace Tower_in_NCU.Applet
             _hp = 1000;
             _atk = 10;
             _def = 10;
-            _gold = 0;
+            _gold = 1000;
             _exp = 0;
             _yellowKey = 0;
             _blueKey = 0;
@@ -104,7 +105,10 @@ namespace Tower_in_NCU.Applet
         public override void Excute()
         {
             if (!_active)
+            {
+                StopMove();
                 return;
+            }
 
             if (_dialogue.HasMessage())
                 return;
@@ -166,7 +170,10 @@ namespace Tower_in_NCU.Applet
         public override void KeyDown(KeyEventArgs e)
         {
             if (!_active)
+            {
+                StopMove();
                 return;
+            }
 
             if (_dialogue.HasMessage())
             {
@@ -194,7 +201,10 @@ namespace Tower_in_NCU.Applet
         public override void KeyUp(KeyEventArgs e)
         {
             if (!_active)
+            {
+                StopMove();
                 return;
+            }
 
             if (_dialogue.HasMessage())
             {

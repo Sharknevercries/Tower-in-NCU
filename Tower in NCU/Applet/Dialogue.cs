@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tower_in_NCU.Tower;
 using Tower_in_NCU.Main;
+using Tower_in_NCU.Image;
 
 namespace Tower_in_NCU.Applet
 {
@@ -15,7 +16,7 @@ namespace Tower_in_NCU.Applet
         private static Dialogue _dialogue;
         private static Queue<Dialogue> _queue;
 
-        private Image.ImageUnit _background;
+        private ImageUnit _background;
         private const string BackgroundImageName = "dialogueBackground";
 
         public enum DialogueLocation
@@ -28,7 +29,7 @@ namespace Tower_in_NCU.Applet
             Left = 96, Right = 200 , None,
         };
 
-        private Image.ImageUnit _faceImage;
+        private ImageUnit _faceImage;
         private DialogueLocation _dialogueLocation;
         private FaceLoaction _faceLoaction;
         private string _nameTitle;
@@ -51,8 +52,8 @@ namespace Tower_in_NCU.Applet
             _message = message;
             _dialogueLocation = dialogueLocation;
             _faceLoaction = faceLocation;
-            _faceImage = faceName != null ? new Image.ImageUnit(faceName) : null;
-            _background = new Image.ImageUnit(BackgroundImageName);
+            _faceImage = faceName != null ? new ImageUnit(faceName) : null;
+            _background = new ImageUnit(BackgroundImageName);
         }
 
         public void Initialize()

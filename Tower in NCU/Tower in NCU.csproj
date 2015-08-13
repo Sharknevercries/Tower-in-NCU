@@ -51,6 +51,7 @@
     <Compile Include="Applet\Battle.cs" />
     <Compile Include="Applet\Dialogue.cs" />
     <Compile Include="Applet\Player.cs" />
+    <Compile Include="Applet\Shop.cs" />
     <Compile Include="GameState\GameState.cs" />
     <Compile Include="GameState\MenuState.cs" />
     <Compile Include="GameState\TowerState.cs" />
@@ -67,7 +68,10 @@
     <Compile Include="Main\Program.cs" />
     <Compile Include="MapObject\MapObjectFactory.cs" />
     <Compile Include="MapObject\Monster.cs" />
+    <Compile Include="MapObject\Shop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shop\GoldShop.cs" />
+    <Compile Include="Shop\Shop.cs" />
     <Compile Include="Tower\Floor.cs" />
     <Compile Include="Tower\Tower.cs" />
     <EmbeddedResource Include="Main\GameWindow.resx">

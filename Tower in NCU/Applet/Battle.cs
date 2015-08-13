@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tower_in_NCU.MapObject;
 using Tower_in_NCU.Tower;
+using Tower_in_NCU.Image;
 
 namespace Tower_in_NCU.Applet
 {
@@ -15,7 +16,7 @@ namespace Tower_in_NCU.Applet
         private static Battle _battle;
 
         private const string BackgroundImageName = "dialogueBackground";
-        private Image.ImageUnit _background;
+        private ImageUnit _background;
 
         private Floor _floor;
         private Player _player;
@@ -34,7 +35,7 @@ namespace Tower_in_NCU.Applet
 
         private Battle()
         {
-            _background = new Image.ImageUnit(BackgroundImageName);
+            _background = new ImageUnit(BackgroundImageName);
             _background.SetPosition(Floor.StartX, 150);
             _dialogue = Dialogue.GetInstance();
             _active = false;
@@ -108,12 +109,12 @@ namespace Tower_in_NCU.Applet
 
             if(_player.Hp <= 0)
             {
-                BattleEnd();
+                BattleEnd(false);
             }
 
             if(_monster.Hp <= 0)
             {
-                BattleEnd();
+                BattleEnd(true);
             }
 
         }
@@ -128,13 +129,16 @@ namespace Tower_in_NCU.Applet
             
         }
 
-        private void BattleEnd()
+        private void BattleEnd(bool win)
         {
-            _floor.SetMapObject(_player.NextPosition, MapObjectType.Floor1);
-            _player.Gold += _monster.Gold;
-            _player.Exp += _monster.Exp;
-            string result = string.Format("獲得 {0} 金幣和 {1} 經驗", _monster.Gold, _monster.Exp);
-            _dialogue.AddDialogue(Dialogue.DialogueLocation.Middle, "戰鬥結果", result, Dialogue.FaceLoaction.None, null);
+            if (win)
+            {
+                _floor.SetMapObject(_player.NextPosition, MapObjectType.Floor1);
+                _player.Gold += _monster.Gold;
+                _player.Exp += _monster.Exp;
+                string result = string.Format("獲得 {0} 金幣和 {1} 經驗", _monster.Gold, _monster.Exp);
+                _dialogue.AddDialogue(Dialogue.DialogueLocation.Middle, "戰鬥結果", result, Dialogue.FaceLoaction.None, null);
+            }
             _active = false;
             _player.Active = true;
         }

@@ -34,7 +34,7 @@ namespace Tower_in_NCU.Tower
                 {
                     for (int col = 0; col < Edge; col++)
                     {
-                        // \r\t out
+                        // Neglect \r\t 
                         int id = row * (Edge + 1) + col;
                         MapObjectType type = (MapObjectType)int.Parse(numbers[id]);
                         SetMapObject(row, col, type);
