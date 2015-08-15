@@ -124,91 +124,85 @@
   <data name="author" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obj\author.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bgm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sound\bgm.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Cance" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sound\cancel.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="changeChoice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Select" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sound\changeChoice.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="choiceBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ChoiceBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obj\choiceBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="choiceBackground2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ChoiceBackground2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obj\choiceBackground2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="confirm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Confirm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sound\confirm.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="dialogueBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="DialogueBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obj\dialogueBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="door" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sound\door.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="downArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="WownArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obj\downArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eliminate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Eliminate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sound\eliminate.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="enemyAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="EnemyAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sound\enemyAttack.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="fail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Fail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sound\fail.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="floor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Floor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Floors\floor2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;big5</value>
   </data>
-  <data name="floor3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Floor3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Floors\floor3.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;big5</value>
   </data>
-  <data name="floor4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Floor4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Floors\floor4.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;big5</value>
   </data>
-  <data name="floor5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Floor5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Floors\floor5.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;big5</value>
   </data>
-  <data name="gameintro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Gameintro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obj\gameintro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gameOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="GameOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obj\gameOver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gameover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Gameover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sound\gameover.mid;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="getItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="GetItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sound\getItem.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obj\image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="KeymanFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Character\KeymanFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="leftArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="LeftArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obj\leftArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="monstersintro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obj\monstersintro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="move" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Move" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sound\move.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="playerAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="PlayerAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sound\playerAttack.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="rightArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="RightArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obj\rightArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="slidebar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Slidebar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obj\slidebar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="slidebarBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="SlidebarBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obj\slidebarBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="story" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -223,10 +217,16 @@
   <data name="TonyFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Character\TonyFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="UpArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obj\upArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="floor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Floor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Floors\floor1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;big5</value>
+  </data>
+  <data name="Exploration" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sound\Exploration.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OpenDoor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sound\OpenDoor.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

@@ -13,8 +13,8 @@ namespace Tower_in_NCU.Shop
 {
     abstract class Shop
     {
-        private const string BackgroundImageName = "dialogueBackground";
-        private const string ChoiceBackgroundImageName = "choiceBackground";
+        private const string BackgroundImageName = "DialogueBackground";
+        private const string ChoiceBackgroundImageName = "ChoiceBackground";
         protected Applet.Shop _shop;
         protected Player _player;
         protected ImageUnit _background;
@@ -57,6 +57,8 @@ namespace Tower_in_NCU.Shop
             StringFormat sf = new StringFormat();
             sf.Alignment = StringAlignment.Center;
             sf.LineAlignment = StringAlignment.Center;
+            g.DrawString(_titleText, new Font("Arial", 12), Brushes.White,
+                new RectangleF(Floor.StartX + paddingLeft, paddingTop, width, Floor.ObjectSize * 2), sf);
             for (int i = 0; i < _menuText.Length; i++)
             {
                 g.DrawString(_menuText[i], new Font("Arial", 14), Brushes.White,

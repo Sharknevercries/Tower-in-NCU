@@ -9,15 +9,17 @@ using Tower_in_NCU.Main;
 using Tower_in_NCU.MapObject;
 using System.Windows.Forms;
 using Tower_in_NCU.Image;
+using Tower_in_NCU.Audio;
 
 namespace Tower_in_NCU.Applet
 {
     class Player : Applet
     {
-        private static Player _player;
+        private static Player _player = new Player();
 
         private Tower.Tower _tower;
         private Dialogue _dialogue;
+        private AudioPlayer _audioPlayer;
 
         private List<ImageUnit[]> _frames;
         private const string _characterImageName = "Actor1";
@@ -47,12 +49,7 @@ namespace Tower_in_NCU.Applet
         public enum Face { Down, Left, Right, Up };
         
         private Face _finalFace;
-
-        static Player()
-        {
-            _player = new Player();
-        }
-
+        
         private Player()
         {
             _frames = new List<ImageUnit[]>();
@@ -82,13 +79,13 @@ namespace Tower_in_NCU.Applet
 
         public static Player GetInstance() => _player;
 
-        public void Initialize()
+        public override void Initialize()
         {
             _finalFace = Face.Down;
             _hp = 1000;
-            _atk = 10;
+            _atk = 100;
             _def = 10;
-            _gold = 1000;
+            _gold = 0;
             _exp = 0;
             _yellowKey = 0;
             _blueKey = 0;
@@ -100,6 +97,7 @@ namespace Tower_in_NCU.Applet
             _position = new Point(6, 11);
             _tower = Tower.Tower.GetInstance();
             _dialogue = Dialogue.GetInstance();
+            _audioPlayer = AudioPlayer.GetInstance();
         }
 
         public override void Excute()
@@ -119,6 +117,7 @@ namespace Tower_in_NCU.Applet
             if (_up) _finalFace = Face.Up;
             if (_left || _right || _up || _down)
             {
+                _audioPlayer.Play(AudioPlayer.SoundEffect.Move);
                 _nextPosition = _position;
                 switch (_finalFace)
                 {

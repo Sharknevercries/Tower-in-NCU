@@ -8,42 +8,38 @@ using System.Windows.Forms;
 using Tower_in_NCU.MapObject;
 using Tower_in_NCU.Tower;
 using Tower_in_NCU.Image;
+using Tower_in_NCU.Audio;
 
 namespace Tower_in_NCU.Applet
 {
     class Battle : Applet
     {
-        private static Battle _battle;
+        private static Battle _battle = new Battle();
 
-        private const string BackgroundImageName = "dialogueBackground";
+        private const string BackgroundImageName = "DialogueBackground";
         private ImageUnit _background;
 
         private Floor _floor;
         private Player _player;
         private Monster _monster;
         private Dialogue _dialogue;
+        private AudioPlayer _aduioPlayer;
 
         private bool _playerTurn;
 
         private int _counter;
-        private const int MaxCounter = 3;
-
-        static Battle()
-        {
-            _battle = new Battle();
-        }
-
+        private const int MaxCounter = 5;
+        
         private Battle()
         {
             _background = new ImageUnit(BackgroundImageName);
             _background.SetPosition(Floor.StartX, 150);
-            _dialogue = Dialogue.GetInstance();
             _active = false;
         }
 
         public static Battle GetInstance() => _battle; 
 
-        public void Initialize(Player player, Monster monster, Floor floor)
+        public void SetBattle(Player player, Monster monster, Floor floor)
         {
             _player = player;
             _monster = monster;
@@ -96,11 +92,13 @@ namespace Tower_in_NCU.Applet
 
             if (_playerTurn)
             {
+                _aduioPlayer.Play(AudioPlayer.SoundEffect.PlayerAttack);
                 if (damageToMonster > 0)
                     _monster.Hp -= damageToMonster;
             }
             else
             {
+                _aduioPlayer.Play(AudioPlayer.SoundEffect.EnemyAttack);
                 if (damageToPlayer > 0)
                     _player.Hp -= damageToPlayer;
             }
@@ -133,6 +131,7 @@ namespace Tower_in_NCU.Applet
         {
             if (win)
             {
+                _aduioPlayer.Play(AudioPlayer.SoundEffect.Eliminate);
                 _floor.SetMapObject(_player.NextPosition, MapObjectType.Floor1);
                 _player.Gold += _monster.Gold;
                 _player.Exp += _monster.Exp;
@@ -143,5 +142,10 @@ namespace Tower_in_NCU.Applet
             _player.Active = true;
         }
 
+        public override void Initialize()
+        {
+            _dialogue = Dialogue.GetInstance();
+            _aduioPlayer = AudioPlayer.GetInstance();
+        }
     }
 }

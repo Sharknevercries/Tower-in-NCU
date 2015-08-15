@@ -10,26 +10,19 @@ namespace Tower_in_NCU.Applet
 {
     class Shop : Applet
     {
-        private static Shop _shop;
+        private static Shop _shop = new Shop();
         private List<Tower_in_NCU.Shop.Shop> _shops;
         private Player _player;
         private int _currentShop;
 
-        static Shop()
-        {
-            _shop = new Shop();
-        }
+        private Shop() { }
 
-        private Shop()
-        {
-        }
-
-        public void Initialize()
+        public override void Initialize()
         {
             _player = Player.GetInstance();
             _shops = new List<Tower_in_NCU.Shop.Shop>();
             // TODO: Set Text
-            _shops.Add(new Tower_in_NCU.Shop.GoldShop("消費金幣換能力", new string[] { "HP + 500", "ATk + 3", "Def + 3" , "Exit" }, _player, this));
+            _shops.Add(new Tower_in_NCU.Shop.GoldShop("迷途的旅行者啊\n我這可以消費金幣來強化你的能力", new string[] { "HP + 500", "ATk + 3", "Def + 3" , "Exit" }, _player, this));
             _currentShop = 0;
         }
 

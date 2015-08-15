@@ -13,11 +13,11 @@ namespace Tower_in_NCU.Applet
 {
     class Dialogue : Applet
     {
-        private static Dialogue _dialogue;
-        private static Queue<Dialogue> _queue;
+        private static Dialogue _dialogue = new Dialogue();
+        private static Queue<Dialogue> _queue = new Queue<Dialogue>();
 
         private ImageUnit _background;
-        private const string BackgroundImageName = "dialogueBackground";
+        private const string BackgroundImageName = "DialogueBackground";
 
         public enum DialogueLocation
         {
@@ -35,12 +35,6 @@ namespace Tower_in_NCU.Applet
         private string _nameTitle;
         private string _message;
 
-        static Dialogue()
-        {
-            _dialogue = new Dialogue();
-            _queue = new Queue<Dialogue>();
-        }
-
         private Dialogue()
         {
             _active = true;
@@ -56,7 +50,7 @@ namespace Tower_in_NCU.Applet
             _background = new ImageUnit(BackgroundImageName);
         }
 
-        public void Initialize()
+        public override void Initialize()
         {
             _queue.Clear();
         }
@@ -140,5 +134,6 @@ namespace Tower_in_NCU.Applet
         {
             return _queue.Count > 0;
         }
+        
     }
 }

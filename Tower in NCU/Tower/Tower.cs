@@ -30,7 +30,7 @@ namespace Tower_in_NCU.Tower
         public void Initialize()
         {
             for (int i = 0; i < _maxFloor; i++)
-                _floors[i].Initilize("floor" + (i + 1));
+                _floors[i].Initilize("Floor" + (i + 1));
         }
 
     }

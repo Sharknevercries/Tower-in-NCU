@@ -34,6 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="NAudio, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.7.3\lib\net35\NAudio.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +56,7 @@
     <Compile Include="Applet\Dialogue.cs" />
     <Compile Include="Applet\Player.cs" />
     <Compile Include="Applet\Shop.cs" />
+    <Compile Include="Audio\AudioPlayer.cs" />
     <Compile Include="GameState\GameState.cs" />
     <Compile Include="GameState\MenuState.cs" />
     <Compile Include="GameState\TowerState.cs" />
@@ -87,6 +92,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -210,6 +216,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Floors\floor5.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\Exploration.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\OpenDoor.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

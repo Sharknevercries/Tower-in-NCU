@@ -18,6 +18,8 @@ namespace Tower_in_NCU.Image
             try
             {
                 object obj = Properties.Resources.ResourceManager.GetObject(s);
+                if (obj == null)
+                    throw new Exception("Loading image " + s + " failed.");
                 _img = (Bitmap)obj;
             }
             catch(Exception e)

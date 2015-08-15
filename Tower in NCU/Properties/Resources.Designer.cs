@@ -83,36 +83,18 @@ namespace Tower_in_NCU.Properties {
         /// <summary>
         ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream bgm {
+        internal static System.IO.UnmanagedMemoryStream Cance {
             get {
-                return ResourceManager.GetStream("bgm", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream cancel {
-            get {
-                return ResourceManager.GetStream("cancel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream changeChoice {
-            get {
-                return ResourceManager.GetStream("changeChoice", resourceCulture);
+                return ResourceManager.GetStream("Cance", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap choiceBackground {
+        internal static System.Drawing.Bitmap ChoiceBackground {
             get {
-                object obj = ResourceManager.GetObject("choiceBackground", resourceCulture);
+                object obj = ResourceManager.GetObject("ChoiceBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -120,9 +102,9 @@ namespace Tower_in_NCU.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap choiceBackground2 {
+        internal static System.Drawing.Bitmap ChoiceBackground2 {
             get {
-                object obj = ResourceManager.GetObject("choiceBackground2", resourceCulture);
+                object obj = ResourceManager.GetObject("ChoiceBackground2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -130,18 +112,18 @@ namespace Tower_in_NCU.Properties {
         /// <summary>
         ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream confirm {
+        internal static System.IO.UnmanagedMemoryStream Confirm {
             get {
-                return ResourceManager.GetStream("confirm", resourceCulture);
+                return ResourceManager.GetStream("Confirm", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap dialogueBackground {
+        internal static System.Drawing.Bitmap DialogueBackground {
             get {
-                object obj = ResourceManager.GetObject("dialogueBackground", resourceCulture);
+                object obj = ResourceManager.GetObject("DialogueBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -149,140 +131,130 @@ namespace Tower_in_NCU.Properties {
         /// <summary>
         ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream door {
+        internal static System.IO.UnmanagedMemoryStream Eliminate {
             get {
-                return ResourceManager.GetStream("door", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
-        internal static System.Drawing.Bitmap downArrow {
-            get {
-                object obj = ResourceManager.GetObject("downArrow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetStream("Eliminate", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream eliminate {
+        internal static System.IO.UnmanagedMemoryStream EnemyAttack {
             get {
-                return ResourceManager.GetStream("eliminate", resourceCulture);
+                return ResourceManager.GetStream("EnemyAttack", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream enemyAttack {
+        internal static System.IO.UnmanagedMemoryStream Exploration {
             get {
-                return ResourceManager.GetStream("enemyAttack", resourceCulture);
+                return ResourceManager.GetStream("Exploration", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream fail {
+        internal static System.IO.UnmanagedMemoryStream Fail {
             get {
-                return ResourceManager.GetStream("fail", resourceCulture);
+                return ResourceManager.GetStream("Fail", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類似 1	1	1	1	1	1	1	1	1	1	1	1	1
-        ///1	3	0	0	0	0	0	0	1	3	0	0	1
-        ///1	1	1	1	1	1	1	0	1	1	1	0	1
-        ///1	0	0	0	0	0	5	4	0	0	1	0	1
-        ///1	1	0	1	1	1	1	0	1	0	1	0	1
-        ///1	0	0	0	1	0	0	0	1	0	1	0	1
-        ///1	1	0	1	1	0	1	0	1	0	1	0	1
-        ///1	0	0	0	1	1	1	0	1	1	1	0	1
-        ///1	0	0	0	1	0	0	0	0	0	0	0	1
-        ///1	1	0	1	1	1	0	1	1	1	0	1	1
-        ///1	0	0	0	1	0	0	0	1	0	0	0	1
-        ///1	0	0	0	1	0	0	0	1	0	0	0	1
+        ///1	3	0	0	49	50	49	0	1	3	51	50	1
+        ///1	1	1	1	1	1	1	0	1	1	1	49	1
+        ///1	0	52	51	50	49	15	0	16	52	1	15	1
+        ///1	1	15	1	1	1	1	0	1	13	1	0	1
+        ///1	5	55	5	1	52	15	0	1	12	1	0	1
+        ///1	1	15	1	1	12	1	0	1	10	1	0	1
+        ///1	13	55	12	1	1	1	0	1	1	1	0	1
+        ///1	5	10	5	1	0	0	0	0	0	0	0	1
+        ///1	1	15	1	1	1	0	1	1	1	16	1	1
+        ///1	12	58	13	1	0	0	0	1	5	58	5	1
+        ///1	6	10	5	1	0	0	0	1	5	5	5	1
         ///1	1	1	1	1	1	1	1	1	1	1	1	1
         /// 的當地語系化字串。
         /// </summary>
-        internal static string floor1 {
+        internal static string Floor1 {
             get {
-                return ResourceManager.GetString("floor1", resourceCulture);
+                return ResourceManager.GetString("Floor1", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類似 1	1	1	1	1	1	1	1	1	1	1	1	1
-        ///1	4	0	0	75	80	75	0	1	4	0	105	1
+        ///1	4	0	0	49	50	49	0	1	4	0	55	1
         ///1	1	1	1	1	1	1	0	1	1	1	20	1
-        ///1	42	40	43	1	0	0	0	5	5	1	1	1
+        ///1	41	40	42	1	0	0	0	5	5	1	1	1
         ///1	12	0	13	15	0	1	1	1	1	1	12	1
-        ///1	10	0	10	1	0	75	1	5	5	1	13	1
-        ///1	1	1	1	1	0	80	15	120	13	1	85	1
-        ///1	5	6	10	1	0	85	1	1	1	1	80	1
-        ///1	5	0	90	15	0	80	15	105	5	1	75	1
-        ///1	1	1	1	1	0	75	1	12	1	1	15	1
+        ///1	10	0	10	1	0	49	1	5	5	1	13	1
+        ///1	1	1	1	1	0	50	15	58	13	1	51	1
+        ///1	5	6	10	1	0	51	1	1	1	1	50	1
+        ///1	5	0	52	15	0	50	15	55	5	1	49	1
+        ///1	1	1	1	1	0	49	1	12	1	1	15	1
         ///1	5	6	10	1	0	0	1	1	1	5	0	1
-        ///1	5	0	105	15	0	0	0	0	15	0	2	1
+        ///1	5	0	55	15	0	0	0	0	15	0	2	1
         ///1	1	1	1	1	1	1	1	1	1	1	1	1
         /// 的當地語系化字串。
         /// </summary>
-        internal static string floor2 {
+        internal static string Floor2 {
             get {
-                return ResourceManager.GetString("floor2", resourceCulture);
+                return ResourceManager.GetString("Floor2", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類似 1	1	1	1	1	1	1	1	1	1	1	1	1
-        ///1	3	0	0	0	15	0	75	80	13	1	7	1
-        ///1	1	1	1	1	1	0	75	10	80	1	110	1
-        ///1	25	1	10	5	1	0	75	10	85	1	120	1
-        ///1	120	1	12	90	15	0	75	85	12	1	95	1
-        ///1	105	1	13	5	1	15	1	1	1	1	105	1
-        ///1	90	1	1	1	1	0	5	75	10	1	90	1
-        ///1	85	80	75	16	15	0	0	0	75	1	85	1
-        ///1	1	1	1	1	1	1	1	1	15	1	80	1
-        ///1	0	0	0	0	80	85	80	10	0	16	75	1
+        ///1	3	0	0	0	15	0	49	50	13	1	7	1
+        ///1	1	1	1	1	1	0	49	10	50	1	56	1
+        ///1	25	1	10	5	1	0	49	10	51	1	58	1
+        ///1	58	1	12	52	15	0	49	51	12	1	53	1
+        ///1	55	1	13	5	1	15	1	1	1	1	55	1
+        ///1	52	1	1	1	1	0	5	49	10	1	52	1
+        ///1	51	50	49	16	15	0	0	0	49	1	51	1
+        ///1	1	1	1	1	1	1	1	1	15	1	50	1
+        ///1	0	0	0	0	50	51	50	10	0	16	49	1
         ///1	15	1	1	1	1	1	1	1	1	1	1	1
-        ///1	0	0	0	10	75	85	75	12	13	0	4	1
+        ///1	0	0	0	10	49	51	49	12	13	0	4	1
         ///1	1	1	1	1	1	1	1	1	1	1	1	1
         /// 的當地語系化字串。
         /// </summary>
-        internal static string floor3 {
+        internal static string Floor3 {
             get {
-                return ResourceManager.GetString("floor3", resourceCulture);
+                return ResourceManager.GetString("Floor3", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類似 1	1	1	1	1	1	1	1	1	1	1	1	1
-        ///1	4	0	0	0	80	85	80	0	0	0	10	1
+        ///1	4	0	0	0	50	51	50	0	0	0	10	1
         ///1	1	1	1	1	1	1	1	1	1	1	15	1
-        ///1	0	0	0	0	105	105	105	0	0	0	10	1
+        ///1	0	0	0	0	55	55	55	0	0	0	10	1
         ///1	0	1	1	1	1	1	1	1	1	1	1	1
-        ///1	0	1	120	15	0	0	0	0	0	15	0	1
-        ///1	0	1	5	1	0	1	1	1	0	1	95	1
+        ///1	0	1	58	15	0	0	0	0	0	15	0	1
+        ///1	0	1	5	1	0	1	1	1	0	1	53	1
         ///1	0	1	1	1	0	1	12	1	0	1	13	1
-        ///1	0	0	0	15	0	1	95	15	0	1	12	1
+        ///1	0	0	0	15	0	1	53	15	0	1	12	1
         ///1	1	15	1	1	1	1	10	1	0	1	45	1
-        ///1	0	120	0	1	6	1	1	1	0	1	1	1
-        ///1	13	12	5	1	5	13	120	15	0	17	3	1
+        ///1	0	58	0	1	6	1	1	1	0	1	1	1
+        ///1	13	12	5	1	5	13	58	15	0	17	3	1
         ///1	1	1	1	1	1	1	1	1	1	1	1	1
         /// 的當地語系化字串。
         /// </summary>
-        internal static string floor4 {
+        internal static string Floor4 {
             get {
-                return ResourceManager.GetString("floor4", resourceCulture);
+                return ResourceManager.GetString("Floor4", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類似 1	1	1	1	1	1	1	1	1	1	1	1	1
-        ///1	1	1	1	1	1	145	1	1	1	1	1	1
+        ///1	1	1	1	1	1	50	1	1	1	1	1	1
         ///1	1	1	1	1	1	0	1	1	1	1	1	1
         ///1	1	1	1	1	1	0	1	1	1	1	1	1
         ///1	1	1	1	1	1	0	1	1	1	1	1	1
@@ -295,18 +267,18 @@ namespace Tower_in_NCU.Properties {
         ///1	0	0	0	0	0	0	0	0	0	0	0	1
         ///1	1	1	1	1	1	1	1	1	1	1	1	1 的當地語系化字串。
         /// </summary>
-        internal static string floor5 {
+        internal static string Floor5 {
             get {
-                return ResourceManager.GetString("floor5", resourceCulture);
+                return ResourceManager.GetString("Floor5", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap gameintro {
+        internal static System.Drawing.Bitmap Gameintro {
             get {
-                object obj = ResourceManager.GetObject("gameintro", resourceCulture);
+                object obj = ResourceManager.GetObject("Gameintro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -314,9 +286,9 @@ namespace Tower_in_NCU.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap gameOver {
+        internal static System.Drawing.Bitmap GameOver {
             get {
-                object obj = ResourceManager.GetObject("gameOver", resourceCulture);
+                object obj = ResourceManager.GetObject("GameOver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -324,9 +296,9 @@ namespace Tower_in_NCU.Properties {
         /// <summary>
         ///   查詢類型 System.Byte[] 的當地語系化資源。
         /// </summary>
-        internal static byte[] gameover1 {
+        internal static byte[] Gameover1 {
             get {
-                object obj = ResourceManager.GetObject("gameover1", resourceCulture);
+                object obj = ResourceManager.GetObject("Gameover1", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -334,18 +306,18 @@ namespace Tower_in_NCU.Properties {
         /// <summary>
         ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream getItem {
+        internal static System.IO.UnmanagedMemoryStream GetItem {
             get {
-                return ResourceManager.GetStream("getItem", resourceCulture);
+                return ResourceManager.GetStream("GetItem", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap image {
+        internal static System.Drawing.Bitmap Image {
             get {
-                object obj = ResourceManager.GetObject("image", resourceCulture);
+                object obj = ResourceManager.GetObject("Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,9 +335,9 @@ namespace Tower_in_NCU.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap leftArrow {
+        internal static System.Drawing.Bitmap LeftArrow {
             get {
-                object obj = ResourceManager.GetObject("leftArrow", resourceCulture);
+                object obj = ResourceManager.GetObject("LeftArrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,27 +355,55 @@ namespace Tower_in_NCU.Properties {
         /// <summary>
         ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream move {
+        internal static System.IO.UnmanagedMemoryStream Move {
             get {
-                return ResourceManager.GetStream("move", resourceCulture);
+                return ResourceManager.GetStream("Move", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream playerAttack {
+        internal static System.IO.UnmanagedMemoryStream OpenDoor {
             get {
-                return ResourceManager.GetStream("playerAttack", resourceCulture);
+                return ResourceManager.GetStream("OpenDoor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream PlayerAttack {
+            get {
+                return ResourceManager.GetStream("PlayerAttack", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap rightArrow {
+        internal static System.Drawing.Bitmap RightArrow {
             get {
-                object obj = ResourceManager.GetObject("rightArrow", resourceCulture);
+                object obj = ResourceManager.GetObject("RightArrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Select {
+            get {
+                return ResourceManager.GetStream("Select", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Slidebar {
+            get {
+                object obj = ResourceManager.GetObject("Slidebar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -411,19 +411,9 @@ namespace Tower_in_NCU.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap slidebar {
+        internal static System.Drawing.Bitmap SlidebarBackground {
             get {
-                object obj = ResourceManager.GetObject("slidebar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
-        internal static System.Drawing.Bitmap slidebarBackground {
-            get {
-                object obj = ResourceManager.GetObject("slidebarBackground", resourceCulture);
+                object obj = ResourceManager.GetObject("SlidebarBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -471,9 +461,19 @@ namespace Tower_in_NCU.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap upArrow {
+        internal static System.Drawing.Bitmap UpArrow {
             get {
-                object obj = ResourceManager.GetObject("upArrow", resourceCulture);
+                object obj = ResourceManager.GetObject("UpArrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap WownArrow {
+            get {
+                object obj = ResourceManager.GetObject("WownArrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

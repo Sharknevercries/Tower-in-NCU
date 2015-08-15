@@ -13,6 +13,7 @@ namespace Tower_in_NCU.Applet
         protected bool _active;
 
         abstract public void Excute();
+        abstract public void Initialize();
         abstract public void Draw(Graphics g);
         abstract public void KeyDown(KeyEventArgs e);
         abstract public void KeyUp(KeyEventArgs e);        

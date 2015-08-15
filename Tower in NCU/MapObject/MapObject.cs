@@ -7,6 +7,7 @@ using System.Drawing;
 using Tower_in_NCU.Tower;
 using Tower_in_NCU.Applet;
 using Tower_in_NCU.Image;
+using Tower_in_NCU.Audio;
 
 namespace Tower_in_NCU.MapObject
 {
@@ -34,17 +35,18 @@ namespace Tower_in_NCU.MapObject
 
     abstract class MapObject
     {
+        protected static Dialogue _dialogue = Dialogue.GetInstance();
+        protected static AudioPlayer _audioPlayer = AudioPlayer.GetInstance();
+
         private List<ImageUnit> _frames;
         private int _currentFrame;
         protected MapObjectType _type;
-        protected Dialogue _dialogue;
         
         public MapObject(List<ImageUnit> frames, MapObjectType type)
         {
             _frames = frames;
             _currentFrame = 0;
             _type = type;
-            _dialogue = Dialogue.GetInstance();
         }
 
         public MapObject(ImageUnit img, MapObjectType type) : this(new List<ImageUnit>() { img }, type) { }

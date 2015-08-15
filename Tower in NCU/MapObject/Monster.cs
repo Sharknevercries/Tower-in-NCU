@@ -11,7 +11,7 @@ namespace Tower_in_NCU.MapObject
 {
     class Monster : MapObject
     {
-        private Battle _battle;
+        private static Battle _battle = Battle.GetInstance();
         private int _hp;
         private int _atk;
         private int _def;
@@ -20,7 +20,6 @@ namespace Tower_in_NCU.MapObject
 
         public Monster(List<Image.ImageUnit> frames, MapObjectType type) : base(frames, type)
         {
-            _battle = Battle.GetInstance();
             switch (type)
             {
                 case MapObjectType.GreenSlime:
@@ -38,10 +37,10 @@ namespace Tower_in_NCU.MapObject
                 case MapObjectType.BigBat:
                     SetStatus(70, 80, 30, 7, 4);
                     break;
-                case MapObjectType.BlueWizard:
+                case MapObjectType.Wizard:
                     SetStatus(70, 15, 10, 4, 2);
                     break;
-                case MapObjectType.Wizard:
+                case MapObjectType.BlueWizard:
                     SetStatus(150, 25, 25, 10, 3);
                     break;
                 case MapObjectType.Skeleton:
@@ -61,8 +60,7 @@ namespace Tower_in_NCU.MapObject
         
         public override bool Event(Player player, Floor floor)
         {
-            Monster monster = (Monster)MemberwiseClone();
-            _battle.Initialize(player, monster, floor);
+            _battle.SetBattle(player, (Monster)MemberwiseClone(), floor);
             _battle.Active = true;
             player.StopMove();
             player.Active = false;
