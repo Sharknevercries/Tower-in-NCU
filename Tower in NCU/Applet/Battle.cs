@@ -26,9 +26,11 @@ namespace Tower_in_NCU.Applet
         private AudioPlayer _aduioPlayer;
 
         private bool _playerTurn;
+        private int _playerAttackTime;
+        private int _enemyAttackTime;
 
         private int _counter;
-        private const int MaxCounter = 5;
+        private const int MaxCounter = 2;
         
         private Battle()
         {
@@ -45,6 +47,8 @@ namespace Tower_in_NCU.Applet
             _monster = monster;
             _floor = floor;
             _counter = 0;
+            _enemyAttackTime = 0;
+            _playerAttackTime = 0;
             _playerTurn = true;
         }
 
@@ -67,7 +71,7 @@ namespace Tower_in_NCU.Applet
             g.DrawString(_monster.Atk + "", font, Brushes.White, new Point(280, 222));
             g.DrawString(_monster.Def + "", font, Brushes.White, new Point(280, 254));
 
-            _player.DrawPlayer(g, new Point(460, 140), Player.Face.Down);
+            _player.DrawPlayer(g, new Point(460, 150), Player.Face.Down);
             g.DrawString("生命", font, Brushes.White, new Point(430, 190));
             g.DrawString("攻擊力", font, Brushes.White, new Point(420, 222));
             g.DrawString("防禦力", font, Brushes.White, new Point(420, 254));
@@ -87,23 +91,14 @@ namespace Tower_in_NCU.Applet
                 return;
             _counter = 0;
 
-            int damageToPlayer = _monster.Atk - _player.Def;
-            int damageToMonster = _player.Atk - _monster.Def;
-
             if (_playerTurn)
             {
-                _aduioPlayer.Play(AudioPlayer.SoundEffect.PlayerAttack);
-                if (damageToMonster > 0)
-                    _monster.Hp -= damageToMonster;
+                PlayerAttack();
             }
             else
             {
-                _aduioPlayer.Play(AudioPlayer.SoundEffect.EnemyAttack);
-                if (damageToPlayer > 0)
-                    _player.Hp -= damageToPlayer;
+                EnemyAttack();
             }
-
-            _playerTurn = !_playerTurn;
 
             if(_player.Hp <= 0)
             {
@@ -146,6 +141,49 @@ namespace Tower_in_NCU.Applet
         {
             _dialogue = Dialogue.GetInstance();
             _aduioPlayer = AudioPlayer.GetInstance();
+        }
+
+        private void PlayerAttack()
+        {
+            int dealDamage = _player.Atk - _monster.Def;
+
+            _aduioPlayer.Play(AudioPlayer.SoundEffect.PlayerAttack);
+            if (dealDamage > 0)
+                _monster.Hp -= dealDamage;
+
+            if (++_playerAttackTime >= _player.AttackTime)
+            {
+                _playerAttackTime = 0;
+                _playerTurn = !_playerTurn;
+            }
+        }
+
+        private void EnemyAttack()
+        {
+            int dealDamage;
+
+            _aduioPlayer.Play(AudioPlayer.SoundEffect.EnemyAttack);
+
+            if (_monster.Ability.Contains(Monster.MonsterFeature.Penetrate))
+            {
+                dealDamage = _monster.Atk;
+            }
+            else
+            {
+                dealDamage = _monster.Atk - _player.Def;
+            }
+
+            if (dealDamage < 0)
+                dealDamage = 0;
+
+            _player.Hp -= dealDamage;
+            
+            if(++_enemyAttackTime >= _monster.AttackTime)
+            {
+                _enemyAttackTime = 0;
+                _playerTurn = !_playerTurn;
+            }
+
         }
     }
 }

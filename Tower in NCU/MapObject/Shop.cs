@@ -30,7 +30,7 @@ namespace Tower_in_NCU.MapObject
                 case MapObjectType.ShopBody1:
                 case MapObjectType.ShopBody2:
                     break;
-                case MapObjectType.Shop:
+                case MapObjectType.GoldShop:
                     _shop.SetShop(0);
                     _shop.Active = true;
                     player.Active = false;

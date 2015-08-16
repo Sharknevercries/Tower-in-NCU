@@ -22,14 +22,15 @@ namespace Tower_in_NCU.MapObject
         Shield1, Shield2, Shield3, Shield4, Shield5,
         a, b,c,d,e, 
         f,g,h,i,j,
-        Shop, ShopBody1, ShopBody2,
-        NPC1, NCP2,
+        GoldShop, ShopBody1, ShopBody2,
+        ExpShop,
+        NCP2,
         k,
         l,
         m,
         n,
         GreenSlime, BlueSlime, RedSlime, LittleBat, BigBat,
-        RedBigBat, Wizard, BlueWizard, RedWizard, Skeleton,
+        RedBat, Wizard, YellowWizard, RedWizard, Skeleton,
         ShieldSkeleton, EliteSkeleton,
     };
 
@@ -44,7 +45,7 @@ namespace Tower_in_NCU.MapObject
         
         public MapObject(List<ImageUnit> frames, MapObjectType type)
         {
-            _frames = frames;
+            _frames = new List<ImageUnit>(frames);
             _currentFrame = 0;
             _type = type;
         }
@@ -76,7 +77,7 @@ namespace Tower_in_NCU.MapObject
             _frames[_currentFrame++ / 3].Draw(g);
             _currentFrame = _currentFrame >= 3 * _frames.Count ? 0 : _currentFrame;
         }
-        
+
         public abstract bool Event(Player player, Floor floor);
 
         public MapObjectType Type

@@ -54,6 +54,7 @@
     <Compile Include="Applet\Applet.cs" />
     <Compile Include="Applet\Battle.cs" />
     <Compile Include="Applet\Dialogue.cs" />
+    <Compile Include="Applet\MonsterBook.cs" />
     <Compile Include="Applet\Player.cs" />
     <Compile Include="Applet\Shop.cs" />
     <Compile Include="Audio\AudioPlayer.cs" />

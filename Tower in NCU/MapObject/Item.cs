@@ -132,6 +132,11 @@ namespace Tower_in_NCU.MapObject
                 case MapObjectType.Sword4:
                 case MapObjectType.Sword5:
                 case MapObjectType.Shield1:
+                    player.Def += 8;
+                    floor.SetMapObject(player.NextPosition, MapObjectType.Floor1);
+                    _dialogue.AddDialogue(Dialogue.DialogueLocation.Middle, "系統資訊", "取得鐵盾，防禦增加 8 點", Dialogue.FaceLoaction.None, null);
+                    _audioPlayer.Play(AudioPlayer.SoundEffect.GetItem);
+                    break;
                 case MapObjectType.Shield2:
                 case MapObjectType.Shield3:
                 case MapObjectType.Shield4:

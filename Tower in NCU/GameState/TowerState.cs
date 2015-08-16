@@ -13,11 +13,11 @@ namespace Tower_in_NCU.GameState
     class TowerState : GameState
     {
         private Tower.Tower _tower;
-        private Audio.AudioPlayer _audioPlayer;
+        private AudioPlayer _audioPlayer;
 
         private enum AppletName
         {
-            Player, Battle, Dialogue, Shop
+            Player, Battle, Dialogue, Shop, MonsterBook,
         };
 
         private List<Applet.Applet> _applets;
@@ -38,6 +38,7 @@ namespace Tower_in_NCU.GameState
             _applets.Add(Battle.GetInstance());
             _applets.Add(Dialogue.GetInstance());
             _applets.Add(Applet.Shop.GetInstance());
+            _applets.Add(MonsterBook.GetInstance());
             _tower = Tower.Tower.GetInstance();
             _audioPlayer = AudioPlayer.GetInstance();
 

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tower_in_NCU.Applet;
 using System.Drawing;
+using Tower_in_NCU.MapObject;
 
 namespace Tower_in_NCU.Tower
 {
@@ -26,6 +27,8 @@ namespace Tower_in_NCU.Tower
         public bool Event(Player player) => _floors[player.CurrentFloor].Event(player);
 
         public void Draw(Graphics g, int currentFloor) => _floors[currentFloor].Draw(g);
+
+        public SortedSet<MapObjectType> ExistedMonster(int currentFloor) => _floors[currentFloor].ExistedMonster();
 
         public void Initialize()
         {

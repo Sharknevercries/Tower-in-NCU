@@ -31,16 +31,15 @@ namespace Tower_in_NCU.Applet
         private Point _position;
         private Point _nextPosition;
 
-        private static ImageUnit[] _keys;
+        private ImageUnit[] _keysImage;
         private int _hp;
         private int _atk;
+        private int _atkTime;
         private int _def;
         private int _gold;
         private int _exp;
         private int _currentFloor;
-        private int _yellowKey;
-        private int _blueKey;
-        private int _redKey;
+        private int[] _keys;
         private bool _left;
         private bool _right;
         private bool _down;
@@ -53,7 +52,7 @@ namespace Tower_in_NCU.Applet
         private Player()
         {
             _frames = new List<ImageUnit[]>();
-            _keys = new ImageUnit[3];
+            _keysImage = new ImageUnit[3];
             try
             {
                 ImageUnit character = new ImageUnit(_characterImageName);
@@ -67,9 +66,9 @@ namespace Tower_in_NCU.Applet
                     }
                     _frames.Add(tmp);
                 }
-                _keys[0] = MapObjectFactory.CreateMapObject(MapObjectType.YellowKey).Frames[0];
-                _keys[1] = MapObjectFactory.CreateMapObject(MapObjectType.BlueKey).Frames[0];
-                _keys[2] = MapObjectFactory.CreateMapObject(MapObjectType.RedKey).Frames[0];
+                _keysImage[0] = MapObjectFactory.CreateMapObject(MapObjectType.YellowKey).Frames[0];
+                _keysImage[1] = MapObjectFactory.CreateMapObject(MapObjectType.BlueKey).Frames[0];
+                _keysImage[2] = MapObjectFactory.CreateMapObject(MapObjectType.RedKey).Frames[0];
             }
             catch (Exception e)
             {
@@ -84,13 +83,12 @@ namespace Tower_in_NCU.Applet
             _finalFace = Face.Down;
             _hp = 1000;
             _atk = 100;
-            _def = 10;
+            _atkTime = 1;
+            _def = 100;
             _gold = 0;
             _exp = 0;
-            _yellowKey = 0;
-            _blueKey = 0;
-            _redKey = 0;
-            _currentFloor = 0;
+            _keys = new int[] { 55, 55, 0 };
+            _currentFloor = 3;
             _battleFrame = 0;
             _currentFrame = 0;
             _active = true;
@@ -320,49 +318,67 @@ namespace Tower_in_NCU.Applet
 
         public int YellowKey
         {
-            get { return _yellowKey; }
-            set { _yellowKey = value; }
+            get { return _keys[0]; }
+            set { _keys[0] = value; }
         }
 
         public int BlueKey
         {
-            get { return _blueKey; }
-            set { _blueKey = value; }
+            get { return _keys[1]; }
+            set { _keys[1] = value; }
         }
 
         public int RedKey
         {
-            get { return _redKey; }
-            set { _redKey = value; }
+            get { return _keys[2]; }
+            set { _keys[2] = value; }
+        }
+
+        public int AttackTime
+        {
+            get { return _atkTime; }
+            set { AttackTime = value; }
         }
 
         private void DrawStatus(Graphics g)
         {
-            Font font = new Font("Arial", 16);
-            SolidBrush brush = new SolidBrush(Color.White);
-            g.FillRectangle(new SolidBrush(Color.Black), new Rectangle(0, 0, Floor.StartX, GameWindow.GameHeight));
             string currentFloorString = string.Format("第 {0} 層", _currentFloor + 1 >= 10 ? "" + (_currentFloor + 1) : "0" + (_currentFloor + 1));
-            g.DrawString("Tower In NCU", font, brush, new PointF(10, 10));
-            g.DrawString(currentFloorString, font, brush, new PointF(35, 40));
-            font = new Font("微軟正黑體", 14);
-            g.DrawString("生命", font, brush, new PointF(15, 80));
-            g.DrawString("" + _hp, font, brush, new PointF(80, 80));
-            g.DrawString("攻擊", font, brush, new PointF(15, 110));
-            g.DrawString("" + _atk, font, brush, new PointF(80, 110));
-            g.DrawString("防禦", font, brush, new PointF(15, 140));
-            g.DrawString("" + _def, font, brush, new PointF(80, 140));
-            g.DrawString("金幣", font, brush, new PointF(15, 170));
-            g.DrawString("" + _gold, font, brush, new PointF(80, 170));
-            g.DrawString("經驗", font, brush, new PointF(15, 200));
-            g.DrawString("" + _exp, font, brush, new PointF(80, 200));
-            for(int i = 0; i < 3; i++)
+            int[] width = { Floor.ObjectSize * 2, Floor.ObjectSize * 3 };
+            int[] sumWidth = { Floor.ObjectSize * 2, Floor.ObjectSize * 5 };
+            Font font = new Font("Arial", 16);
+            StringFormat sf = new StringFormat();
+            sf.Alignment = StringAlignment.Center;
+            sf.LineAlignment = StringAlignment.Center;
+
+            g.FillRectangle(Brushes.Black, new Rectangle(0, 0, Floor.StartX, GameWindow.GameHeight));
+            g.DrawString("Tower In NCU", font, Brushes.White, new RectangleF(0, 6, Floor.ObjectSize * 5, Floor.ObjectSize), sf);
+            g.DrawString(currentFloorString, font, Brushes.White, new PointF(35, 40));
+            font = new Font("Arial", 14);
+            g.DrawString("生命", font, Brushes.White, new RectangleF(0, 3 * Floor.ObjectSize, width[0], Floor.ObjectSize), sf);
+            g.DrawString("" + _hp, font, Brushes.White,
+                new RectangleF(width[0], 3 * Floor.ObjectSize, width[1], Floor.ObjectSize), sf);
+            g.DrawString("攻擊", font, Brushes.White, new RectangleF(0, 4 * Floor.ObjectSize, width[0], Floor.ObjectSize), sf);
+            g.DrawString("" + _atk, font, Brushes.White,
+                new RectangleF(width[0], 4 * Floor.ObjectSize, width[1], Floor.ObjectSize), sf);
+            g.DrawString("防禦", font, Brushes.White, new RectangleF(0, 5 * Floor.ObjectSize, width[0], Floor.ObjectSize), sf);
+            g.DrawString("" + _def, font, Brushes.White,
+                new RectangleF(width[0], 5 * Floor.ObjectSize, width[1], Floor.ObjectSize), sf);
+            g.DrawString("金幣", font, Brushes.White, new RectangleF(0, 6 * Floor.ObjectSize, width[0], Floor.ObjectSize), sf);
+            g.DrawString("" + _gold, font, Brushes.White,
+                new RectangleF(width[0], 6 * Floor.ObjectSize, width[1], Floor.ObjectSize), sf);
+            g.DrawString("經驗", font, Brushes.White, new RectangleF(0, 7 * Floor.ObjectSize, width[0], Floor.ObjectSize), sf);
+            g.DrawString("" + _exp, font, Brushes.White,
+                new RectangleF(width[0], 7 * Floor.ObjectSize, width[1], Floor.ObjectSize), sf);
+
+            for (int i = 0; i < 3; i++)
             {
-                _keys[i].SetPosition(new Point(15, 240 + 30 * i));
-                _keys[i].Draw(g, Floor.ObjectSize, Floor.ObjectSize);
+                _keysImage[i].SetPosition(Floor.ObjectSize, (8 + i) * Floor.ObjectSize);
+                _keysImage[i].Draw(g, Floor.ObjectSize, Floor.ObjectSize);
+                g.DrawString("X", font, Brushes.White, 2.2F * Floor.ObjectSize, (8.2F + i) * Floor.ObjectSize);
+                g.DrawString("" + _keys[i], font, Brushes.White,
+                    new RectangleF(3 * Floor.ObjectSize, (8.1F + i) * Floor.ObjectSize, 1 * Floor.ObjectSize, Floor.ObjectSize), sf);
             }
-            g.DrawString("X   " + _yellowKey, font, brush, new PointF(70, 245));
-            g.DrawString("X   " + _blueKey, font, brush, new PointF(70, 275));
-            g.DrawString("X   " + _redKey, font, brush, new PointF(70, 305));
+            
         }
 
         public void DrawPlayer(Graphics g, Point position, Face face)

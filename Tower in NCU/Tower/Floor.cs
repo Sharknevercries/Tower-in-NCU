@@ -26,25 +26,19 @@ namespace Tower_in_NCU.Tower
 
         public void Initilize(string s)
         {
-            try
+
+            string lines = (string)Properties.Resources.ResourceManager.GetObject(s);
+            string[] numbers = lines.Split(new char[] { ' ', '\t', '\n', '\r' });
+            _background = MapObjectFactory.CreateMapObject(MapObjectType.Floor1);
+            for (int row = 0; row < Edge; row++)
             {
-                string lines = (string)Properties.Resources.ResourceManager.GetObject(s);
-                string[] numbers = lines.Split(new char[] { ' ', '\t', '\n', '\r' });
-                for (int row = 0; row < Edge; row++)
+                for (int col = 0; col < Edge; col++)
                 {
-                    for (int col = 0; col < Edge; col++)
-                    {
-                        // Neglect \r\t 
-                        int id = row * (Edge + 1) + col;
-                        MapObjectType type = (MapObjectType)int.Parse(numbers[id]);
-                        SetMapObject(row, col, type);
-                    }
+                    // Neglect \r\t 
+                    int id = row * (Edge + 1) + col;
+                    MapObjectType type = (MapObjectType)int.Parse(numbers[id]);
+                    SetMapObject(row, col, type);
                 }
-                _background = MapObjectFactory.CreateMapObject(MapObjectType.Floor1);
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.ToString());
             }
         }
 
@@ -67,6 +61,22 @@ namespace Tower_in_NCU.Tower
         public void SetMapObject(Point position, MapObjectType type) => SetMapObject(position.Y, position.X, type);
 
         public bool Event(Player player) => _map[player.NextPosition.Y, player.NextPosition.X].Event(player, this);
+
+        public SortedSet<MapObjectType> ExistedMonster()
+        {
+            SortedSet<MapObjectType> ret = new SortedSet<MapObjectType>();
+            for (int row = 0; row < Edge; row++)
+            {
+                for (int col = 0; col < Edge; col++)
+                {
+                    if (_map[row, col] is Monster)
+                    {
+                        ret.Add(_map[row, col].Type);
+                    }
+                }
+            }
+            return ret;
+        }
         
     }
 }
